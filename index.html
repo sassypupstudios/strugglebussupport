@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Struggle Bus Support – Spartanburg, SC Resource Directory</title>
+  <meta name="description" content="Free resource directory for Spartanburg, SC. Find food, housing, healthcare, mental health, employment, and more — no judgment, no barriers.">
+  <meta property="og:title" content="Struggle Bus Support – Spartanburg, SC Resources">
+  <meta property="og:description" content="Find free and low-cost help in Spartanburg, SC — food, shelter, healthcare, jobs, and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://strugglebussupport.org/">
+  <meta name="theme-color" content="#1B6B45">
+  <link rel="canonical" href="https://strugglebussupport.org/">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Struggle Bus Support",
+    "url": "https://strugglebussupport.org",
+    "description": "Free community resource directory for Spartanburg, SC",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://strugglebussupport.org/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-nav" href="#results">Skip to results</a>
+
+  <div class="emergency-bar">
+    Emergency? Call <strong>911</strong> &nbsp;·&nbsp; Mental health crisis: <strong>988</strong> &nbsp;·&nbsp; Domestic violence: <a href="tel:18007997233">1-800-799-7233</a>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo" aria-label="Struggle Bus Support – Home">
+        <div class="logo-icon" aria-hidden="true">🚌</div>
+        <span class="logo-text">
+          Struggle Bus Support
+          <span class="logo-sub">Spartanburg, SC Resources</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/" class="active" aria-current="page">Find Help</a>
+        <a href="suggest.html">Suggest</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <section class="hero" aria-label="Search for resources">
+      <h1>Find Help in Spartanburg, SC</h1>
+      <p>Free and low-cost services for food, housing, healthcare, and more — no judgment.</p>
+      <div class="search-box" role="search">
+        <div class="search-row">
+          <label for="search-input" class="sr-only">Search by keyword or zip code</label>
+          <input
+            type="search"
+            id="search-input"
+            class="search-input"
+            placeholder="Search by keyword or zip code…"
+            aria-label="Search by keyword or zip code"
+            autocomplete="off"
+          >
+          <button class="btn-search" id="search-btn" aria-label="Search">Search</button>
+        </div>
+        <label for="category-filter" class="sr-only">Filter by category</label>
+        <select id="category-filter" class="category-select" aria-label="Filter by category">
+          <option value="">All Categories</option>
+        </select>
+      </div>
+    </section>
+
+    <div class="ad-zone container" aria-label="Sponsored">
+      <div class="ad-placeholder">Advertisement</div>
+    </div>
+
+    <section class="categories-section" aria-label="Browse by category">
+      <div class="container">
+        <h2 class="section-title">Browse by Category</h2>
+        <div class="category-grid" id="category-grid" role="list">
+          <!-- populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <section class="results-section" id="results" aria-label="Resources" aria-live="polite">
+      <div class="results-header">
+        <p class="results-count" id="results-count" aria-live="polite"></p>
+        <button class="btn-clear hidden" id="btn-clear" aria-label="Clear search and filters">Clear filters</button>
+      </div>
+      <div class="resource-list" id="resource-list">
+        <!-- populated by JS -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="/">Find Help</a>
+      <a href="suggest.html">Suggest a Resource</a>
+      <a href="about.html">About</a>
+    </nav>
+    <p>Serving Spartanburg County, SC &nbsp;·&nbsp; Always free to use</p>
+    <p>Listings may not be current. Always call ahead. &nbsp;·&nbsp; <a href="suggest.html">Correct a listing</a></p>
+    <p style="margin-top:12px;font-size:0.75rem;color:#888;">© 2025 Struggle Bus Support. Not affiliated with any government agency.</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suggest a Resource – Struggle Bus Support</title>
+  <meta name="description" content="Know of a resource missing from our Spartanburg, SC directory? Tell us about it.">
+  <meta name="theme-color" content="#1B6B45">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-nav" href="#main-content">Skip to content</a>
+
+  <div class="emergency-bar">
+    Emergency? Call <strong>911</strong> &nbsp;·&nbsp; Mental health crisis: <strong>988</strong> &nbsp;·&nbsp; Domestic violence: <a href="tel:18007997233">1-800-799-7233</a>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo" aria-label="Struggle Bus Support – Home">
+        <div class="logo-icon" aria-hidden="true">🚌</div>
+        <span class="logo-text">
+          Struggle Bus Support
+          <span class="logo-sub">Spartanburg, SC Resources</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/">Find Help</a>
+        <a href="suggest.html" class="active" aria-current="page">Suggest</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content" id="main-content">
+    <div class="suggest-content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Suggest a Resource</span>
+      </nav>
+
+      <h1>Suggest a Resource</h1>
+      <p>Know of a resource we're missing, or is a listing out of date? Fill out what you know — partial info is fine. We'll verify before adding it.</p>
+
+      <form id="suggest-form" novalidate aria-label="Resource suggestion form">
+        <div class="form-group">
+          <label for="f-name">Organization or Program Name <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="f-name" name="name" class="form-control" required
+            placeholder="e.g. Spartanburg Area Food Bank"
+            autocomplete="organization">
+        </div>
+
+        <div class="form-group">
+          <label for="f-category">Category <span class="req" aria-hidden="true">*</span></label>
+          <select id="f-category" name="category" class="form-control" required>
+            <option value="">— Select a category —</option>
+            <option value="Food">Food</option>
+            <option value="Housing">Housing</option>
+            <option value="Healthcare">Healthcare</option>
+            <option value="Mental Health">Mental Health</option>
+            <option value="Substance Recovery">Substance Recovery</option>
+            <option value="Employment">Employment</option>
+            <option value="Transportation">Transportation</option>
+            <option value="Childcare">Childcare</option>
+            <option value="Legal Aid">Legal Aid</option>
+            <option value="Utilities Assistance">Utilities Assistance</option>
+            <option value="Clothing / Household">Clothing / Household</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="f-address">Address</label>
+          <input type="text" id="f-address" name="address" class="form-control"
+            placeholder="Street address, Spartanburg, SC"
+            autocomplete="street-address">
+        </div>
+
+        <div class="form-group">
+          <label for="f-phone">Phone Number</label>
+          <input type="tel" id="f-phone" name="phone" class="form-control"
+            placeholder="(864) 555-0000"
+            autocomplete="tel">
+        </div>
+
+        <div class="form-group">
+          <label for="f-hours">Hours of Operation</label>
+          <input type="text" id="f-hours" name="hours" class="form-control"
+            placeholder="e.g. Mon–Fri 9am–5pm">
+        </div>
+
+        <div class="form-group">
+          <label for="f-website">Website</label>
+          <input type="url" id="f-website" name="website" class="form-control"
+            placeholder="https://"
+            autocomplete="url">
+        </div>
+
+        <div class="form-group">
+          <label for="f-eligibility">Who is eligible? (Who can use this resource?)</label>
+          <textarea id="f-eligibility" name="eligibility" class="form-control"
+            placeholder="e.g. Open to Spartanburg County residents earning under $35,000/year"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="f-description">Additional Details <span class="req" aria-hidden="true">*</span></label>
+          <textarea id="f-description" name="description" class="form-control" required
+            placeholder="Describe what this resource provides and anything useful to know before visiting…"></textarea>
+        </div>
+
+        <hr style="border:none;border-top:1px solid var(--border);margin:24px 0;">
+        <p style="font-size:0.88rem;color:var(--muted);margin-bottom:16px;">Your contact info is optional but helps us follow up if we have questions.</p>
+
+        <div class="form-group">
+          <label for="f-submitter-name">Your Name (optional)</label>
+          <input type="text" id="f-submitter-name" name="submitterName" class="form-control"
+            placeholder="First name or full name"
+            autocomplete="name">
+        </div>
+
+        <div class="form-group">
+          <label for="f-submitter-email">Your Email (optional)</label>
+          <input type="email" id="f-submitter-email" name="submitterEmail" class="form-control"
+            placeholder="you@example.com"
+            autocomplete="email">
+          <p class="form-hint">We'll only use this to follow up on your submission. Never shared or used for marketing.</p>
+        </div>
+
+        <button type="submit" class="btn-submit" id="btn-submit">Submit Suggestion</button>
+
+        <div id="form-status" class="form-status" role="alert" aria-live="assertive"></div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="/">Find Help</a>
+      <a href="suggest.html">Suggest a Resource</a>
+      <a href="about.html">About</a>
+    </nav>
+    <p style="margin-top:12px;font-size:0.75rem;color:#888;">© 2025 Struggle Bus Support. Not affiliated with any government agency.</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script>
+    // Pre-select category if flagging a resource
+    const params = new URLSearchParams(location.search);
+    if (params.get('flag')) {
+      const r = RESOURCES.find(x => x.id === params.get('flag'));
+      if (r) {
+        document.getElementById('f-name').value = r.name + ' (correction)';
+      }
+    }
+
+    document.getElementById('suggest-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const btn    = document.getElementById('btn-submit');
+      const status = document.getElementById('form-status');
+
+      const name = document.getElementById('f-name').value.trim();
+      const cat  = document.getElementById('f-category').value;
+      const desc = document.getElementById('f-description').value.trim();
+
+      if (!name || !cat || !desc) {
+        status.className = 'form-status error';
+        status.textContent = 'Please fill in the required fields: Name, Category, and Description.';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Submitting…';
+      status.className = 'form-status';
+      status.style.display = 'none';
+
+      const payload = {
+        name:           name,
+        category:       cat,
+        address:        document.getElementById('f-address').value.trim(),
+        phone:          document.getElementById('f-phone').value.trim(),
+        hours:          document.getElementById('f-hours').value.trim(),
+        website:        document.getElementById('f-website').value.trim(),
+        eligibility:    document.getElementById('f-eligibility').value.trim(),
+        description:    desc,
+        submitterName:  document.getElementById('f-submitter-name').value.trim(),
+        submitterEmail: document.getElementById('f-submitter-email').value.trim(),
+      };
+
+      try {
+        const res = await fetch('/api/suggest', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        if (res.ok) {
+          status.className = 'form-status success';
+          status.textContent = 'Thank you! Your suggestion has been submitted. We review new listings regularly.';
+          document.getElementById('suggest-form').reset();
+        } else {
+          const err = await res.json().catch(() => ({}));
+          throw new Error(err.error || 'Server error');
+        }
+      } catch (err) {
+        status.className = 'form-status error';
+        status.textContent = 'Something went wrong: ' + err.message + '. Please try again or email hello@strugglebussupport.org.';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Submit Suggestion';
+        status.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  </script>
+</body>
+</html>

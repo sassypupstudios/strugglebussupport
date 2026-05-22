@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Resources – Struggle Bus Support</title>
+  <meta name="description" id="page-desc" content="Local resources in Spartanburg, SC – Struggle Bus Support">
+  <meta name="theme-color" content="#1B6B45">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-nav" href="#results">Skip to results</a>
+
+  <div class="emergency-bar">
+    Emergency? Call <strong>911</strong> &nbsp;·&nbsp; Mental health crisis: <strong>988</strong> &nbsp;·&nbsp; Domestic violence: <a href="tel:18007997233">1-800-799-7233</a>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo" aria-label="Struggle Bus Support – Home">
+        <div class="logo-icon" aria-hidden="true">🚌</div>
+        <span class="logo-text">
+          Struggle Bus Support
+          <span class="logo-sub">Spartanburg, SC Resources</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/">Find Help</a>
+        <a href="suggest.html">Suggest</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <div class="category-hero" id="category-hero">
+      <div class="category-hero-inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">›</span>
+          <span id="breadcrumb-cat" aria-current="page">Category</span>
+        </nav>
+        <h1 id="cat-heading">Resources</h1>
+        <p id="cat-subhead" class="text-muted"></p>
+      </div>
+    </div>
+
+    <section class="results-section" id="results" aria-labelledby="cat-heading">
+      <div class="results-header">
+        <p class="results-count" id="results-count" aria-live="polite"></p>
+        <div style="display:flex;gap:10px;align-items:center;">
+          <label for="cat-search" class="sr-only">Search within category</label>
+          <input
+            type="search"
+            id="cat-search"
+            class="search-input"
+            placeholder="Search within category…"
+            style="max-width:240px;min-height:40px;padding:10px 14px;font-size:0.9rem;"
+            aria-label="Search within this category"
+          >
+        </div>
+      </div>
+      <div class="resource-list" id="resource-list">
+        <p style="color:#888;padding:40px 0;text-align:center;">Loading…</p>
+      </div>
+    </section>
+
+    <div class="ad-zone container" aria-label="Sponsored">
+      <div class="ad-placeholder">Advertisement</div>
+    </div>
+
+    <div style="text-align:center;padding:16px 16px 40px;">
+      <a href="/" class="back-link" style="font-size:1rem;">← Browse All Categories</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="/">Find Help</a>
+      <a href="suggest.html">Suggest a Resource</a>
+      <a href="about.html">About</a>
+    </nav>
+    <p>Listings may not be current. Always call ahead. &nbsp;·&nbsp; <a href="suggest.html">Correct a listing</a></p>
+    <p style="margin-top:12px;font-size:0.75rem;color:#888;">© 2025 Struggle Bus Support. Not affiliated with any government agency.</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script>
+    (function () {
+      const params = new URLSearchParams(location.search);
+      const catId  = params.get('cat') || '';
+      const cat    = CATEGORIES.find(c => c.id === catId);
+
+      const heading   = document.getElementById('cat-heading');
+      const subhead   = document.getElementById('cat-subhead');
+      const breadcrumb = document.getElementById('breadcrumb-cat');
+      const pageTitle = document.getElementById('page-title');
+      const pageDesc  = document.getElementById('page-desc');
+      const list      = document.getElementById('resource-list');
+      const countEl   = document.getElementById('results-count');
+      const catSearch = document.getElementById('cat-search');
+
+      if (!cat) {
+        heading.textContent = 'All Resources';
+        breadcrumb.textContent = 'All Resources';
+      } else {
+        const label = cat.icon + ' ' + cat.label;
+        heading.innerHTML = label;
+        breadcrumb.textContent = cat.label;
+        subhead.textContent = 'Showing ' + cat.label.toLowerCase() + ' resources in Spartanburg, SC';
+        pageTitle.textContent = cat.label + ' Resources – Struggle Bus Support';
+        pageDesc.content = 'Find ' + cat.label.toLowerCase() + ' help in Spartanburg, SC – Struggle Bus Support';
+      }
+
+      let query = '';
+      catSearch.addEventListener('input', () => {
+        query = catSearch.value.trim().toLowerCase();
+        render();
+      });
+
+      function matchesSearch(r, q) {
+        if (!q) return true;
+        const hay = [r.name, r.description, r.address, r.eligibility]
+          .filter(Boolean).join(' ').toLowerCase();
+        return q.split(/\s+/).every(w => hay.includes(w));
+      }
+
+      function render() {
+        const filtered = RESOURCES.filter(r =>
+          (!catId || r.category === catId) && matchesSearch(r, query)
+        );
+
+        countEl.textContent = filtered.length === 1
+          ? '1 resource'
+          : filtered.length + ' resources';
+
+        if (filtered.length === 0) {
+          list.innerHTML = `
+            <div class="empty-state">
+              <h2>No results found</h2>
+              <p>Try a different search term or <a href="/">browse all categories</a>.</p>
+              <a href="suggest.html" class="btn-suggest">+ Suggest a Resource</a>
+            </div>`;
+          return;
+        }
+
+        list.innerHTML = filtered.map(r => {
+          const c = CATEGORIES.find(x => x.id === r.category);
+          const catLabel = c ? c.label : r.category;
+          const phone = r.phone
+            ? `<a class="btn-phone" href="tel:${r.phone.replace(/\D/g,'')}" aria-label="Call ${r.name}">📞 ${r.phone}</a>` : '';
+          return `
+            <article class="resource-card">
+              <div class="card-top">
+                <a class="card-name" href="resource.html?id=${r.id}">${r.name}</a>
+                <span class="category-badge">${catLabel}</span>
+              </div>
+              <div class="card-meta">
+                ${r.address ? `<span>📍 ${r.address}</span>` : ''}
+                ${r.hours   ? `<span>🕐 ${r.hours}</span>` : ''}
+              </div>
+              <p class="card-desc">${r.description}</p>
+              <div class="card-actions">
+                <a class="btn-details" href="resource.html?id=${r.id}">View Details</a>
+                ${phone}
+              </div>
+            </article>`;
+        }).join('');
+      }
+
+      render();
+    })();
+  </script>
+</body>
+</html>

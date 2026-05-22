@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://strugglebussupport.org/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://strugglebussupport.org/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://strugglebussupport.org/suggest.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Categories -->
+  <url><loc>https://strugglebussupport.org/category.html?cat=food</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://strugglebussupport.org/category.html?cat=housing</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://strugglebussupport.org/category.html?cat=healthcare</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://strugglebussupport.org/category.html?cat=mental-health</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://strugglebussupport.org/category.html?cat=substance-recovery</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/category.html?cat=employment</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/category.html?cat=transportation</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/category.html?cat=childcare</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/category.html?cat=legal-aid</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/category.html?cat=utilities</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/category.html?cat=clothing</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <!-- Individual resources -->
+  <url><loc>https://strugglebussupport.org/resource.html?id=spartanburg-area-food-bank</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=soup-kitchen-spartanburg</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=union-mission-spartanburg</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=spartanburg-housing-authority</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=safe-homes-spartanburg</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=bethlehem-center</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=spartanburg-community-health-centers</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=free-medical-clinic-upstate</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=spartanburg-regional-medical-center</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=spartanburg-community-mental-health</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=988-crisis-lifeline</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=beckman-center</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=samhsa-helpline</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=sc-works-spartanburg</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=sparta-transit</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=dss-spartanburg</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=palmetto-legal-aid</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=salvation-army-spartanburg</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=united-way-211</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+</urlset>

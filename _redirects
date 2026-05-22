@@ -1,0 +1,22 @@
+# Cloudflare Pages redirects
+
+# Clean URLs (optional — works alongside .html files)
+/find          /index.html    200
+/resources     /index.html    200
+/help          /index.html    200
+
+# Friendly category shortcuts
+/food          /category.html?cat=food            302
+/housing       /category.html?cat=housing         302
+/healthcare    /category.html?cat=healthcare      302
+/mental-health /category.html?cat=mental-health   302
+/jobs          /category.html?cat=employment      302
+/employment    /category.html?cat=employment      302
+/transit       /category.html?cat=transportation  302
+/childcare     /category.html?cat=childcare       302
+/legal         /category.html?cat=legal-aid       302
+/utilities     /category.html?cat=utilities       302
+/clothing      /category.html?cat=clothing        302
+
+# 404 fallback
+/*             /index.html    404
