@@ -54,6 +54,33 @@ const RESOURCES = [
     mapsUrl: null,
   },
 
+  {
+    id: 'regenesis-health-care',
+    name: 'ReGenesis Health Care',
+    category: 'healthcare',
+    address: '301 Crescent Ave, Spartanburg, SC 29306',
+    zip: '29306',
+    phone: '(864) 582-2411',
+    hours: 'Mon–Fri 8:00 AM – 5:00 PM (multiple locations — call for specific hours)',
+    eligibility: 'Open to all. Accepts all insurance including Medicaid and Medicare. Sliding fee scale for uninsured patients based on income.',
+    description: 'Federally Qualified Health Center with multiple Spartanburg locations offering primary care, dental, behavioral health, and pharmacy services. No one turned away for inability to pay. Also has locations on N Pine St (dental), S Church St, and Langdon St.',
+    website: 'https://www.myrhc.org',
+    mapsUrl: 'https://maps.google.com/?q=301+Crescent+Ave+Spartanburg+SC+29306',
+  },
+  {
+    id: 'st-lukes-free-medical-clinic',
+    name: "St. Luke's Free Medical Clinic",
+    category: 'healthcare',
+    address: '162 N Dean St, Spartanburg, SC 29302',
+    zip: '29302',
+    phone: '(864) 542-2273',
+    hours: 'Mon & Wed–Thu 9:00 AM – 4:30 PM · Tue 9:00 AM – 8:00 PM · Fri 9:00 AM – 1:00 PM',
+    eligibility: 'Uninsured adults who cannot afford care. Call ext. 15 for new patient intake information.',
+    description: 'Free medical clinic providing primary care, chronic disease management, and prescription assistance to uninsured adults in Spartanburg. Satellite clinic also available at 101 St Matthews Ln (Wed 9am–1pm).',
+    website: 'https://www.slfmc.org',
+    mapsUrl: 'https://maps.google.com/?q=162+N+Dean+St+Spartanburg+SC+29302',
+  },
+
   // ── HOUSING ───────────────────────────────────────────────────────────────
   {
     id: 'union-mission-spartanburg',
@@ -188,6 +215,20 @@ const RESOURCES = [
     description: 'Text HOME to 741741 to connect with a trained crisis counselor via text message. Good option if you cannot make a phone call or prefer to text.',
     website: 'https://www.crisistextline.org',
     mapsUrl: null,
+  },
+
+  {
+    id: 'shepherds-center-spartanburg',
+    name: "Shepherd's Center of Spartanburg",
+    category: 'healthcare',
+    address: '393 E Main St, Spartanburg, SC 29302',
+    zip: '29302',
+    phone: '(864) 585-1999',
+    hours: 'Mon–Fri — call for current class and program schedule',
+    eligibility: 'Active seniors in Spartanburg. Most programs are free or low-cost.',
+    description: 'Provides seniors with programs for physical fitness (line dancing, aerobics, tai chi), lifelong learning classes, mental wellness activities, and volunteer opportunities. Focused on helping older adults stay active, connected, and independent.',
+    website: 'https://spartanburgshepherdcenter.org',
+    mapsUrl: 'https://maps.google.com/?q=393+E+Main+St+Spartanburg+SC+29302',
   },
 
   // ── SUBSTANCE RECOVERY ────────────────────────────────────────────────────
