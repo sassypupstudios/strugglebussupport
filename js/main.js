@@ -128,14 +128,17 @@
     const hasFilter = searchQuery || activeCategory;
     btnClear.classList.toggle('hidden', !hasFilter);
 
-    if (hasFilter) {
-      resultsCount.textContent =
-        filtered.length === 0 ? 'No resources found' :
-        filtered.length === 1 ? '1 resource found' :
-        `${filtered.length} resources found`;
-    } else {
-      resultsCount.textContent = `${RESOURCES.length} resources listed`;
+    // No search/filter active — clear the list and hide count
+    if (!hasFilter) {
+      resultsCount.textContent = '';
+      resourceList.innerHTML   = '';
+      return;
     }
+
+    resultsCount.textContent =
+      filtered.length === 0 ? 'No resources found' :
+      filtered.length === 1 ? '1 resource found' :
+      `${filtered.length} resources found`;
 
     if (filtered.length === 0) {
       resourceList.innerHTML = `
