@@ -13,7 +13,7 @@
  */
 
 const AIRTABLE_BASE = 'appsOXR5oyQqYQDkB';
-const AIRTABLE_TABLE = 'Suggestions';
+const AIRTABLE_TABLE = 'tblOn0Dcxl8sR7ePZ';
 
 export async function onRequestPost({ request, env }) {
   // CORS preflight handled by _headers; reject non-POST just in case
