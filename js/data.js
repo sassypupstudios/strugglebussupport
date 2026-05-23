@@ -11,6 +11,7 @@ const CATEGORIES = [
   { id: 'utilities',          label: 'Utilities Assistance',icon: '💡' },
   { id: 'clothing',           label: 'Clothing & Household',icon: '👕' },
   { id: 'seniors',            label: 'Senior Services',     icon: '🧓' },
+  { id: 'shelters',           label: 'Shelters',            icon: '🛖' },
 ];
 
 const RESOURCES = [
@@ -163,7 +164,7 @@ const RESOURCES = [
   {
     id: 'miracle-hill-rescue-mission',
     name: 'Miracle Hill Rescue Mission',
-    category: 'housing',
+    category: 'shelters',
     address: '189 N Forest St, Spartanburg, SC 29301',
     zip: '29301',
     phone: '(864) 583-1628',
@@ -176,7 +177,7 @@ const RESOURCES = [
   {
     id: 'union-mission-spartanburg',
     name: 'Union Mission of Spartanburg',
-    category: 'housing',
+    category: 'shelters',
     address: '144 Union St, Spartanburg, SC 29302',
     zip: '29302',
     phone: '(864) 582-7553',
@@ -201,15 +202,15 @@ const RESOURCES = [
   },
   {
     id: 'safe-homes-spartanburg',
-    name: 'SAFE Homes – Rape Crisis Coalition',
-    category: 'housing',
-    address: 'Confidential location, Spartanburg, SC',
-    zip: '29301',
+    name: 'Project R.E.S.T. – Domestic Violence & Sexual Assault Services',
+    category: 'shelters',
+    address: '236 Union St, Spartanburg, SC 29302',
+    zip: '29302',
     phone: '1-800-273-5066',
     hours: '24/7 Crisis Hotline · Office Mon–Fri 8:30 AM – 5:00 PM: (864) 583-9803',
-    eligibility: 'Survivors of domestic violence, sexual assault, and stalking. Services are free and confidential.',
-    description: 'Provides emergency shelter (up to 60 days) for women and children, crisis counseling, legal advocacy, and safety planning. 24/7 hotline: 1-800-273-5066. Office: (864) 583-9803. Your location is never shared.',
-    website: 'https://www.safehomessc.org',
+    eligibility: 'Survivors of domestic violence and sexual assault in Spartanburg, Cherokee, and Union Counties. Services are free and confidential.',
+    description: 'Formerly known as SAFE Homes. Provides 41 emergency and 9 transitional shelter beds for DV survivors, crisis intervention, legal advocacy, safety planning, court assistance, and emergency cell phones. Shelter location is confidential — call the hotline. Serves Spartanburg, Cherokee, and Union Counties.',
+    website: 'https://projectrest.org',
     mapsUrl: null,
   },
   {
@@ -543,6 +544,34 @@ const RESOURCES = [
     website: 'https://www.goodwillsc.org',
     mapsUrl: 'https://maps.google.com/?q=1400+E+Main+St+Spartanburg+SC+29307',
   },
+  // ── SHELTERS ──────────────────────────────────────────────────────────────
+  {
+    id: 'a-way-home-spartanburg',
+    name: 'A Way Home – Family Shelter',
+    category: 'shelters',
+    address: '458 N Church St, Spartanburg, SC 29303',
+    zip: '29303',
+    phone: '(864) 582-6737',
+    hours: 'Office 8:30 AM – 5:00 PM · Client intake 4:00 PM · Emergency intake 24/7',
+    eligibility: 'Families experiencing homelessness — couples with or without children, single mothers, single fathers, and grandparents/legal guardians with children.',
+    description: 'Short-term emergency shelter with wraparound support for homeless families. Provides safe shelter, daily meals, case management, and help moving toward stable permanent housing. Operated by A Place to Call Home in partnership with The Faith Initiative to End Child Poverty.',
+    website: 'https://www.aptchspartanburg.org/a-way-home',
+    mapsUrl: 'https://maps.google.com/?q=458+N+Church+St+Spartanburg+SC+29303',
+  },
+  {
+    id: 'divinity-care-facility',
+    name: 'Divinity Care Facility',
+    category: 'shelters',
+    address: '446 Arch St, Spartanburg, SC 29301',
+    zip: '29301',
+    phone: '(864) 948-9700',
+    hours: 'Call for intake hours',
+    eligibility: 'Homeless men. No ID required to enter.',
+    description: 'Christian-based emergency shelter for homeless men operating in Spartanburg since 1996. Provides food, shelter, job skills training, life skills classes, and faith-based support programs for men with nowhere else to turn.',
+    website: 'https://divinitycare.wordpress.com',
+    mapsUrl: 'https://maps.google.com/?q=446+Arch+St+Spartanburg+SC+29301',
+  },
+
   // ── SENIOR SERVICES ──────────────────────────────────────────────────────
   {
     id: 'spartanburg-council-on-aging',
