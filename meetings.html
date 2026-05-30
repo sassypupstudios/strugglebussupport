@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AA &amp; NA Meeting Finder – Spartanburg, SC | Struggle Bus Support</title>
+  <meta name="description" content="Find Alcoholics Anonymous (AA) and Narcotics Anonymous (NA) meetings in Spartanburg, SC. Free meeting schedules, local helplines, and recovery resources.">
+  <meta name="theme-color" content="#1B6B45">
+  <link rel="canonical" href="https://strugglebussupport.org/meetings.html">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .meetings-hero {
+      background: linear-gradient(135deg, #1B6B45 0%, #145336 100%);
+      color: #fff;
+      padding: 48px 20px 40px;
+      text-align: center;
+    }
+    .meetings-hero h1 { color: #fff; margin-bottom: 10px; }
+    .meetings-hero p  { color: rgba(255,255,255,0.88); font-size: 1.05rem; max-width: 540px; margin: 0 auto; }
+
+    .meetings-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 20px;
+    }
+    @media (max-width: 600px) {
+      .meetings-grid { grid-template-columns: 1fr; }
+    }
+
+    .meeting-card {
+      background: #fff;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .meeting-card h2 {
+      font-size: 1.25rem;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .meeting-card .badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background: #E8F5EE;
+      color: #1B6B45;
+      border-radius: 20px;
+      padding: 3px 10px;
+    }
+    .meeting-card p {
+      margin: 0;
+      font-size: 0.93rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .meeting-card .detail-row {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 0.88rem;
+    }
+    .meeting-card .detail-row span {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .btn-finder {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--green);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.15s;
+      margin-top: auto;
+    }
+    .btn-finder:hover { background: #145336; }
+    .btn-finder.orange { background: var(--orange); }
+    .btn-finder.orange:hover { background: #c45b00; }
+    .btn-phone-lg {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #fff;
+      color: var(--green);
+      border: 2px solid var(--green);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 11px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .btn-phone-lg:hover { background: #E8F5EE; }
+
+    .what-to-expect {
+      background: #F8FAF9;
+      border-top: 1px solid var(--border);
+      padding: 36px 20px;
+    }
+    .what-to-expect-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .what-to-expect h2 { margin-bottom: 16px; }
+    .what-to-expect ul { padding-left: 20px; }
+    .what-to-expect li { margin-bottom: 8px; line-height: 1.55; color: var(--text); }
+
+    .crisis-strip {
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      border-radius: 10px;
+      padding: 18px 20px;
+      max-width: 700px;
+      margin: 0 auto 32px;
+      font-size: 0.93rem;
+    }
+    .crisis-strip strong { color: #7a4a00; }
+  </style>
+</head>
+<body>
+  <a class="skip-nav" href="#main-content">Skip to content</a>
+
+  <div class="emergency-bar">
+    Emergency? Call <strong>911</strong> &nbsp;·&nbsp; Mental health crisis: <strong>988</strong> &nbsp;·&nbsp; SAMHSA helpline: <a href="tel:18006624357">1-800-662-4357</a>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo" aria-label="Struggle Bus Support – Home">
+        <div class="logo-icon" aria-hidden="true">🚌</div>
+        <span class="logo-text">
+          Struggle Bus Support
+          <span class="logo-sub">Spartanburg, SC Resources</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/">Find Help</a>
+        <a href="suggest.html">Suggest</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="meetings-hero">
+      <h1>AA &amp; NA Meeting Finder</h1>
+      <p>Find Alcoholics Anonymous and Narcotics Anonymous meetings in and around Spartanburg, SC — any day of the week.</p>
+    </div>
+
+    <div style="max-width:700px;margin:0 auto;padding:28px 20px 0;">
+      <div class="crisis-strip" role="note">
+        <strong>In crisis right now?</strong> Call or text <strong>988</strong> for immediate mental health support, or call SAMHSA at <a href="tel:18006624357">1-800-662-4357</a> (free, 24/7, confidential). You don't have to wait for a meeting.
+      </div>
+    </div>
+
+    <div class="meetings-grid">
+
+      <!-- AA Card -->
+      <div class="meeting-card">
+        <h2>
+          <span aria-hidden="true">🍺</span>
+          Alcoholics Anonymous
+          <span class="badge">AA</span>
+        </h2>
+        <p>
+          Free peer support for anyone with a desire to stop drinking. No dues, no fees.
+          Meetings are open to anyone — you don't have to identify as an alcoholic to attend.
+        </p>
+        <div class="detail-row">
+          <span>📞 <strong>Spartanburg Intergroup:</strong> <a href="tel:8645829573">(864) 582-9573</a></span>
+          <span>🕐 <strong>Meetings:</strong> Every day of the week</span>
+          <span>📍 <strong>Locations:</strong> Multiple sites across Spartanburg County</span>
+        </div>
+        <a class="btn-finder" href="https://www.aaspartanburg.org" target="_blank" rel="noopener noreferrer">
+          🔍 Find AA Meetings – Spartanburg ↗
+        </a>
+        <a class="btn-phone-lg" href="tel:8645829573">
+          📞 Call AA Intergroup
+        </a>
+      </div>
+
+      <!-- NA Card -->
+      <div class="meeting-card">
+        <h2>
+          <span aria-hidden="true">💊</span>
+          Narcotics Anonymous
+          <span class="badge">NA</span>
+        </h2>
+        <p>
+          Free peer support for anyone who wants to stop using drugs of any kind. No minimum
+          clean time required. You are welcome at your very first day.
+        </p>
+        <div class="detail-row">
+          <span>📞 <strong>NA Helpline:</strong> <a href="tel:18009740062">1-800-974-0062</a></span>
+          <span>🕐 <strong>Meetings:</strong> 7 days a week including online</span>
+          <span>📍 <strong>Region:</strong> Piedmont Area NA (serves Spartanburg)</span>
+        </div>
+        <a class="btn-finder orange" href="https://meetings.na.org/?country=US&state=SC&city=Spartanburg" target="_blank" rel="noopener noreferrer">
+          🔍 Find NA Meetings – Spartanburg ↗
+        </a>
+        <a class="btn-phone-lg" href="tel:18009740062">
+          📞 Call NA Helpline
+        </a>
+      </div>
+
+    </div>
+
+    <!-- What to expect -->
+    <div class="what-to-expect">
+      <div class="what-to-expect-inner">
+        <h2>What to Expect at Your First Meeting</h2>
+        <ul>
+          <li><strong>You don't have to speak.</strong> You can attend and just listen. Many people do this for their first several meetings.</li>
+          <li><strong>You don't have to give your full name.</strong> First names only are the norm.</li>
+          <li><strong>You don't need to be sober to walk in.</strong> Meetings welcome people wherever they are in their journey.</li>
+          <li><strong>It's free.</strong> A small donation basket is sometimes passed, but it is never required.</li>
+          <li><strong>Meetings vary.</strong> Some are speaker meetings, some are discussion meetings, some are step studies. If one doesn't feel right, try another — the format and group culture differ.</li>
+          <li><strong>Open vs. Closed meetings:</strong> Open meetings welcome anyone (including family and supporters). Closed meetings are for people who identify as having a problem with alcohol (AA) or drugs (NA).</li>
+        </ul>
+
+        <h2 style="margin-top:28px;">Other Recovery Resources in Spartanburg</h2>
+        <ul>
+          <li><a href="resource.html?id=beckman-center">Beckman Center for Mental Health Services</a> — outpatient treatment &amp; medication-assisted treatment (MAT)</li>
+          <li><a href="resource.html?id=samhsa-helpline">SAMHSA National Helpline</a> — free 24/7 treatment referrals, (800) 662-4357</li>
+          <li><a href="resource.html?id=miracle-hill-rescue-mission">Miracle Hill Rescue Mission</a> — long-term recovery program for homeless individuals</li>
+          <li><a href="category.html?cat=substance-recovery">View all Substance Recovery resources →</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="/">Find Help</a>
+      <a href="suggest.html">Suggest a Resource</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+    </nav>
+    <p>Serving Spartanburg County, SC &nbsp;·&nbsp; Always free to use</p>
+    <p>Listings may not be current. Always call ahead. &nbsp;·&nbsp; <a href="suggest.html">Correct a listing</a></p>
+    <p style="margin-top:12px;font-size:0.75rem;color:#888;">© 2026 Struggle Bus Support. Not affiliated with any government agency.</p>
+  </footer>
+</body>
+</html>
