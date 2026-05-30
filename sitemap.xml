@@ -5,6 +5,86 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url><loc>https://strugglebussupport.org/about.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/suggest.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://strugglebussupport.org/contact.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://strugglebussupport.org/accessibility.html</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://strugglebussupport.org/category.html?cat=food</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://strugglebussupport.org/category.html?cat=shelters</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://strugglebussupport.org/category.html?cat=housing</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://strugglebussupport.org/category.html?cat=healthcare</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://strugglebussupport.org/category.html?cat=mental-health</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://strugglebussupport.org/category.html?cat=substance-recovery</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/category.html?cat=employment</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/category.html?cat=utilities</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/category.html?cat=seniors</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/category.html?cat=transportation</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/category.html?cat=childcare</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/category.html?cat=legal-aid</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/category.html?cat=clothing</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/category.html?cat=pet-care</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=greater-spartanburg-ministries</loc><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=broken-angels-landrum</loc><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=greer-community-ministries</loc><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=helping-hands-woodruff</loc><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=woodruff-soup-kitchen</loc><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=lake-bowen-baptist-pantry</loc><priority>0.6</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=cowpens-first-baptist-pantry</loc><priority>0.6</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=spartanburg-area-food-bank</loc><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=soup-kitchen-spartanburg</loc><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=total-ministries-spartanburg</loc><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=believers-fellowship-pantry</loc><priority>0.6</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=st-matthews-episcopal-pantry</loc><priority>0.6</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=ruths-gleanings</loc><priority>0.6</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=carpenters-table-foodbank</loc><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=second-harvest-food-bank</loc><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=regenesis-health-care</loc><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=st-lukes-free-medical-clinic</loc><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=spartanburg-community-health-centers</loc><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=free-medical-clinic-upstate</loc><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=spartanburg-regional-medical-center</loc><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=spartanburg-community-mental-health</loc><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=988-crisis-lifeline</loc><priority>0.9</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=crisis-text-line</loc><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=miracle-hill-rescue-mission</loc><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=union-mission-spartanburg</loc><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=safe-homes-spartanburg</loc><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=a-way-home-spartanburg</loc><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=divinity-care-facility</loc><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=spartanburg-housing-authority</loc><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=bethlehem-center</loc><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=beckman-center</loc><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=samhsa-helpline</loc><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=aa-spartanburg</loc><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=sc-works-spartanburg</loc><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=goodwill-job-training</loc><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=sparta-transit</loc><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=dss-spartanburg</loc><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=child-abuse-prevention-association</loc><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=palmetto-legal-aid</loc><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=sc-bar-pro-bono</loc><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=salvation-army-spartanburg</loc><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=middle-tyger-community-center</loc><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=sc-liheap</loc><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=united-way-211</loc><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=salvation-army-thrift</loc><priority>0.6</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=goodwill-thrift-spartanburg</loc><priority>0.6</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=bethlehem-center-clothing</loc><priority>0.6</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=shepherds-center-spartanburg</loc><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=spartanburg-council-on-aging</loc><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=fifty-upstate</loc><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=help-for-our-elderly</loc><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=appalachian-council-aging</loc><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=getcaresc</loc><priority>0.6</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=mobile-meals-spartanburg</loc><priority>0.7</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=animal-allies-spay-neuter-clinic</loc><priority>0.6</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=spartanburg-humane-society-veterinary-clinic</loc><priority>0.6</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=spartanburg-humane-society-lost-found-receiving</loc><priority>0.6</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=greenville-county-animal-care-vet-clinic</loc><priority>0.5</priority></url>
+  <url><loc>https://strugglebussupport.org/resource.html?id=greenville-county-animal-care-food-pantry</loc><priority>0.5</priority></url>
+</urlset>
+    <priority>1.0</priority>
+  </url>
   <url>
     <loc>https://strugglebussupport.org/about.html</loc>
     <changefreq>monthly</changefreq>
