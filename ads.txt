@@ -1,0 +1,10 @@
+# ads.txt — Authorized Digital Sellers
+# https://iabtechlab.com/ads-txt/
+#
+# When your Google AdSense account is approved, replace the line below
+# with your actual publisher ID. Format:
+#   google.com, pub-XXXXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+#
+# You can find your publisher ID in AdSense under Account > Account information.
+# Example (replace pub-0000000000000000 with your real ID):
+# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
