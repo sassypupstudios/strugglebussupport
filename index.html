@@ -58,40 +58,24 @@
       <div class="search-box" role="search">
         <div class="search-row">
           <label for="search-input" class="sr-only">Search by keyword or zip code</label>
-          <input
-            type="search"
-            id="search-input"
-            class="search-input"
-            placeholder="Search by keyword or zip code…"
-            aria-label="Search by keyword or zip code"
-            autocomplete="off"
-          >
+          <input type="search" id="search-input" class="search-input" placeholder="Search by keyword or zip code…" aria-label="Search by keyword or zip code" autocomplete="off">
           <button class="btn-search" id="search-btn" aria-label="Search">Search</button>
         </div>
         <label for="category-filter" class="sr-only">Filter by category</label>
-        <select id="category-filter" class="category-select" aria-label="Filter by category">
-          <option value="">All Categories</option>
-        </select>
+        <select id="category-filter" class="category-select" aria-label="Filter by category"><option value="">All Categories</option></select>
       </div>
     </section>
 
     <section class="categories-section" aria-label="Browse by category">
       <div class="container">
         <h2 class="section-title">Browse by Category</h2>
-        <div class="category-grid" id="category-grid" role="list">
-          <!-- populated by JS -->
-        </div>
+        <div class="category-grid" id="category-grid" role="list"></div>
       </div>
     </section>
 
     <section class="results-section" id="results" aria-label="Resources" aria-live="polite">
-      <div class="results-header">
-        <p class="results-count" id="results-count" aria-live="polite"></p>
-        <button class="btn-clear hidden" id="btn-clear" aria-label="Clear search and filters">Clear filters</button>
-      </div>
-      <div class="resource-list" id="resource-list">
-        <!-- populated by JS only when search is active -->
-      </div>
+      <div class="results-header"><p class="results-count" id="results-count" aria-live="polite"></p><button class="btn-clear hidden" id="btn-clear" aria-label="Clear search and filters">Clear filters</button></div>
+      <div class="resource-list" id="resource-list"></div>
     </section>
   </main>
 
@@ -105,10 +89,12 @@
     </nav>
     <p>Serving Spartanburg County, SC &nbsp;·&nbsp; Always free to use</p>
     <p>Listings may not be current. Always call ahead. &nbsp;·&nbsp; <a href="suggest.html">Correct a listing</a></p>
-    <p style="margin-top:12px;font-size:0.75rem;color:#888;">© 2025 Struggle Bus Support. Not affiliated with any government agency.</p>
+    <p style="margin-top:12px;font-size:0.75rem;color:#888;">© 2026 Struggle Bus Support. Not affiliated with any government agency.</p>
   </footer>
 
   <script src="js/data.js"></script>
+  <script src="js/petcare-resources.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/site-links.js"></script>
 </body>
 </html>
