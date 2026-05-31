@@ -62,6 +62,6 @@ jobs:
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: "📋 Weekly Listing Verification — ${{ steps.build.outputs.date }}"
-          to: ${{ secrets.KIRAN_EMAIL }}
+          to: ${{ secrets.MAIL_USERNAME }}
           from: "Struggle Bus Support <${{ secrets.MAIL_USERNAME }}>"
           body: file://email_body.txt
