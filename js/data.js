@@ -22,6 +22,16 @@ const CATEGORIES = [
   { id: 'financial',          label: 'Financial Assistance', icon: '💰' },
 ];
 
+// ── Verification tracking ─────────────────────────────────────────────────────
+// When Kiran verifies a listing, add or update its entry here.
+// Format: 'resource-id': 'YYYY-MM-DD'
+// Any resource NOT listed here falls back to DEFAULT_VERIFIED (the initial batch date).
+const DEFAULT_VERIFIED = '2026-05-31';
+const VERIFIED_DATES = {
+  // Add entries here after each weekly verification call, e.g.:
+  // 'greater-spartanburg-ministries': '2026-06-07',
+};
+
 const RESOURCES = [
   // ── FOOD ──────────────────────────────────────────────────────────────────
   {

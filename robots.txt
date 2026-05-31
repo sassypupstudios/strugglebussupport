@@ -5,4 +5,7 @@ Allow: /
 Disallow: /api/
 Disallow: /functions/
 
+# Block internal admin tools
+Disallow: /admin.html
+
 Sitemap: https://strugglebussupport.org/sitemap.xml

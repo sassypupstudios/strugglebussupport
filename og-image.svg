@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#1B6B45"/>
+      <stop offset="100%" stop-color="#0f4d32"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Left accent bar -->
+  <rect x="0" y="0" width="10" height="630" fill="rgba(255,255,255,0.25)"/>
+  <!-- Bus icon circle -->
+  <circle cx="130" cy="180" r="72" fill="rgba(255,255,255,0.12)"/>
+  <text x="130" y="217" font-family="Arial, Helvetica, sans-serif" font-size="88" text-anchor="middle" fill="white">SB</text>
+  <!-- Main title -->
+  <text x="240" y="160" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="72" font-weight="900" fill="white" letter-spacing="-1">Struggle Bus Support</text>
+  <text x="240" y="218" font-family="Arial, Helvetica, sans-serif" font-size="38" fill="rgba(255,255,255,0.82)">Spartanburg, SC Resource Directory</text>
+  <!-- Divider -->
+  <rect x="80" y="270" width="1040" height="2" fill="rgba(255,255,255,0.2)"/>
+  <!-- Category pills row 1 -->
+  <text x="80" y="330" font-family="Arial, Helvetica, sans-serif" font-size="32" fill="rgba(255,255,255,0.9)">Food  |  Housing  |  Healthcare  |  Mental Health  |  Employment</text>
+  <!-- Category pills row 2 -->
+  <text x="80" y="382" font-family="Arial, Helvetica, sans-serif" font-size="32" fill="rgba(255,255,255,0.9)">Legal Aid  |  Veterans  |  Transportation  |  and 18+ more categories</text>
+  <!-- Bottom strip -->
+  <rect x="0" y="490" width="1200" height="140" fill="rgba(0,0,0,0.28)"/>
+  <text x="80" y="540" font-family="Arial, Helvetica, sans-serif" font-size="27" fill="rgba(255,255,255,0.65)">Free to use  ·  No sign-up required  ·  No judgment  ·  Always free</text>
+  <text x="80" y="592" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="38" font-weight="900" fill="rgba(255,255,255,0.92)">strugglebussupport.org</text>
+</svg>

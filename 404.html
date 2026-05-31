@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found – Struggle Bus Support</title>
+  <meta name="description" content="This page doesn't exist, but we can help you find what you're looking for.">
+  <meta name="theme-color" content="#1B6B45">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .notfound-wrap {
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 56px 20px 64px;
+      text-align: center;
+    }
+    .notfound-icon {
+      font-size: 4rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .notfound-wrap h1 {
+      font-size: clamp(1.6rem, 5vw, 2.2rem);
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+    .notfound-wrap > p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+    .notfound-search {
+      display: flex;
+      gap: 8px;
+      max-width: 480px;
+      margin: 0 auto 36px;
+    }
+    .notfound-search input {
+      flex: 1;
+      padding: 14px 16px;
+      font-size: 1rem;
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      font-family: var(--font);
+    }
+    .notfound-search input:focus {
+      outline: none;
+      border-color: var(--green);
+    }
+    .notfound-search button {
+      background: var(--green);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0 20px;
+      border-radius: var(--radius);
+      white-space: nowrap;
+    }
+    .notfound-search button:hover { background: var(--green-dark); }
+    .shortcut-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 10px;
+      text-align: left;
+      margin-bottom: 32px;
+    }
+    .shortcut-card {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 14px 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .shortcut-card:hover {
+      border-color: var(--green);
+      box-shadow: var(--shadow-hover);
+      color: var(--text);
+    }
+    .shortcut-card span:first-child { font-size: 1.5rem; }
+    .shortcut-card span:last-child  { font-size: 0.85rem; font-weight: 600; }
+    .notfound-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 28px 0;
+    }
+    .crisis-note {
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      font-size: 0.9rem;
+      text-align: left;
+      line-height: 1.55;
+    }
+    .crisis-note strong { color: #7a4a00; }
+  </style>
+</head>
+<body>
+  <a class="skip-nav" href="#main-content">Skip to content</a>
+
+  <div class="emergency-bar">
+    Emergency? Call <strong>911</strong> &nbsp;·&nbsp; Mental health crisis: <strong>988</strong> &nbsp;·&nbsp; Domestic violence: <a href="tel:18007997233">1-800-799-7233</a>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo" aria-label="Struggle Bus Support – Home">
+        <div class="logo-icon" aria-hidden="true">🚌</div>
+        <span class="logo-text">
+          Struggle Bus Support
+          <span class="logo-sub">Spartanburg, SC Resources</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/">Find Help</a>
+        <a href="suggest.html">Suggest</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content" id="main-content">
+    <div class="notfound-wrap">
+      <span class="notfound-icon" aria-hidden="true">🔍</span>
+      <h1>Page Not Found</h1>
+      <p>We couldn't find that page — but we <em>can</em> help you find resources. Try searching below or browse by category.</p>
+
+      <form class="notfound-search" role="search" aria-label="Search resources"
+            onsubmit="event.preventDefault(); window.location='/?q='+encodeURIComponent(document.getElementById('nf-q').value);">
+        <input id="nf-q" type="search" placeholder="Search food, housing, healthcare…" aria-label="Search resources" autocomplete="off">
+        <button type="submit">Search</button>
+      </form>
+
+      <p style="font-size:0.9rem;color:var(--muted);margin-bottom:16px;text-align:center;">Or jump to a category:</p>
+
+      <div class="shortcut-grid" role="list">
+        <a class="shortcut-card" href="category.html?cat=food" role="listitem"><span>🍽️</span><span>Food</span></a>
+        <a class="shortcut-card" href="category.html?cat=housing" role="listitem"><span>🏠</span><span>Housing</span></a>
+        <a class="shortcut-card" href="category.html?cat=healthcare" role="listitem"><span>⚕️</span><span>Healthcare</span></a>
+        <a class="shortcut-card" href="category.html?cat=mental-health" role="listitem"><span>🧠</span><span>Mental Health</span></a>
+        <a class="shortcut-card" href="category.html?cat=employment" role="listitem"><span>💼</span><span>Employment</span></a>
+        <a class="shortcut-card" href="category.html?cat=utilities" role="listitem"><span>💡</span><span>Utilities</span></a>
+        <a class="shortcut-card" href="meetings.html" role="listitem"><span>🔵</span><span>AA &amp; NA Meetings</span></a>
+        <a class="shortcut-card" href="/" role="listitem"><span>🚌</span><span>All Resources</span></a>
+      </div>
+
+      <hr class="notfound-divider">
+
+      <div class="crisis-note" role="note">
+        <strong>Need help right now?</strong> Call or text <strong>988</strong> for mental health crisis support. For other urgent needs, dial <strong>211</strong> (24/7 resource helpline) or call <strong>911</strong> for emergencies.
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="/">Find Help</a>
+      <a href="suggest.html">Suggest a Resource</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+    </nav>
+    <p>Serving Spartanburg County, SC &nbsp;·&nbsp; Always free to use</p>
+    <p style="margin-top:12px;font-size:0.75rem;color:#888;">© 2026 Struggle Bus Support. Not affiliated with any government agency.</p>
+  </footer>
+</body>
+</html>

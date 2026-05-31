@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verification Dashboard – Struggle Bus Support Admin</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .admin-header {
+      background: #1A2A22;
+      color: #fff;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .admin-header h1 { font-size: 1.15rem; margin: 0; color: #fff; }
+    .admin-header p  { font-size: 0.8rem; color: #aaa; margin: 2px 0 0; }
+    .admin-header a  { color: #90c9a8; font-size: 0.85rem; text-decoration: none; }
+    .admin-header a:hover { text-decoration: underline; }
+
+    .admin-wrap { max-width: 900px; margin: 0 auto; padding: 24px 16px 60px; }
+
+    .verify-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .stat-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 18px 16px;
+      text-align: center;
+    }
+    .stat-card .stat-num { font-size: 2rem; font-weight: 900; line-height: 1; }
+    .stat-card .stat-label { font-size: 0.78rem; color: var(--muted); margin-top: 4px; line-height: 1.3; }
+    .stat-card.overdue .stat-num { color: #C62828; }
+    .stat-card.ok .stat-num { color: #1B6B45; }
+    .stat-card.total .stat-num { color: #333; }
+
+    .verify-tip {
+      background: #fffbea;
+      border: 1px solid #f0c040;
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      margin-bottom: 24px;
+    }
+    .verify-tip code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.85em; }
+
+    .verify-section-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 28px 0 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .verify-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 8px; }
+
+    .verify-row {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      transition: opacity 0.3s;
+    }
+    .verify-row:hover { border-color: #aaa; }
+
+    .verify-main { flex: 1; min-width: 0; }
+    .verify-name { font-weight: 700; font-size: 0.97rem; margin-bottom: 4px; color: var(--text); }
+    .verify-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 14px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .verify-meta a { color: var(--green); }
+    .verify-cat {
+      background: var(--green-light);
+      color: var(--green-dark);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .verify-status {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 5px;
+      flex-shrink: 0;
+    }
+    .verify-done-btn {
+      background: #f0f0ed;
+      color: #444;
+      border: 1px solid #ccc;
+      border-radius: var(--radius);
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .verify-done-btn:hover:not(:disabled) { background: var(--green-light); border-color: var(--green); color: var(--green); }
+    .verify-done-btn:disabled { cursor: default; }
+
+    .verify-copy-block {
+      margin-top: 40px;
+      background: #1A2A22;
+      color: #ccc;
+      border-radius: var(--radius-lg);
+      padding: 20px 20px;
+    }
+    .verify-copy-block h2 { color: #90c9a8; font-size: 0.95rem; margin-bottom: 6px; }
+    .verify-copy-block p  { font-size: 0.82rem; color: #aaa; margin-bottom: 12px; }
+    .verify-copy-block code { font-size: 0.82rem; }
+    .copy-block {
+      display: block;
+      background: #0f1f17;
+      color: #a8e6c2;
+      padding: 14px 16px;
+      border-radius: var(--radius);
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.82rem;
+      line-height: 1.6;
+      white-space: pre;
+      overflow-x: auto;
+      min-height: 44px;
+      cursor: text;
+      user-select: all;
+    }
+    .copy-btn {
+      margin-top: 10px;
+      background: var(--green);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 8px 16px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .copy-btn:hover { background: #145336; }
+
+    .print-list-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--green);
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      margin-bottom: 24px;
+    }
+    .print-list-btn:hover { background: var(--green-dark); }
+
+    @media (max-width: 520px) {
+      .verify-stats { grid-template-columns: repeat(2, 1fr); }
+      .verify-row { flex-direction: column; }
+      .verify-status { align-items: flex-start; }
+    }
+
+    @media print {
+      .admin-header, .verify-tip, .verify-done-btn, .verify-copy-block, .print-list-btn,
+      .site-header, .site-footer, .emergency-bar { display: none !important; }
+      body { font-size: 9pt; }
+      .verify-stats { display: none; }
+      .verify-row { border: none; border-bottom: 1px solid #ddd; padding: 6pt 4pt; }
+      .verify-name { font-size: 9pt; }
+      .verify-meta { font-size: 7.5pt; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="admin-header">
+    <div>
+      <h1>🔍 Listing Verification Dashboard</h1>
+      <p>Internal use only — not linked from the public site &nbsp;·&nbsp; <a href="/">← Back to site</a></p>
+    </div>
+    <div style="font-size:0.82rem;color:#aaa;">
+      Resources sorted oldest-verified first
+    </div>
+  </div>
+
+  <div class="admin-wrap">
+    <p style="color:var(--muted);font-size:0.85rem;margin-bottom:20px;">
+      Today: <strong id="today-date"></strong> &nbsp;·&nbsp;
+      <a href="https://github.com/sassypupstudios/strugglebussupport/blob/main/js/data.js" target="_blank" rel="noopener">Edit data.js on GitHub ↗</a>
+    </p>
+
+    <button class="print-list-btn" onclick="window.print()">🖨️ Print Verification Checklist</button>
+
+    <div id="verify-content">
+      <p style="color:#aaa;padding:40px 0;text-align:center;">Loading resources…</p>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/petcare-resources.js"></script>
+  <script>
+  (function () {
+    document.getElementById('today-date').textContent = new Date().toLocaleDateString('en-US', {
+      weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+    });
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    function getVerifiedDate(resource) {
+      if (typeof VERIFIED_DATES !== 'undefined' && VERIFIED_DATES[resource.id]) {
+        return VERIFIED_DATES[resource.id];
+      }
+      return (typeof DEFAULT_VERIFIED !== 'undefined') ? DEFAULT_VERIFIED : '2026-01-01';
+    }
+
+    function daysSince(dateStr) {
+      const d = new Date(dateStr + 'T00:00:00');
+      return Math.max(0, Math.floor((today - d) / 86400000));
+    }
+
+    function fmtDate(dateStr) {
+      const d = new Date(dateStr + 'T00:00:00');
+      return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    }
+
+    function daysColor(days) {
+      if (days > 60) return '#C62828';
+      if (days > 30) return '#E65100';
+      return '#1B6B45';
+    }
+
+    const sorted = [...RESOURCES].sort((a, b) =>
+      getVerifiedDate(a).localeCompare(getVerifiedDate(b))
+    );
+
+    const overdue = sorted.filter(r => daysSince(getVerifiedDate(r)) > 30);
+    const ok      = sorted.filter(r => daysSince(getVerifiedDate(r)) <= 30);
+
+    let markedEntries = [];
+
+    function renderRows(resources) {
+      if (!resources.length) {
+        return '<p style="color:#1B6B45;padding:12px 0;font-weight:600;">None — all good!</p>';
+      }
+      return resources.map(r => {
+        const cat     = CATEGORIES.find(c => c.id === r.category);
+        const catLbl  = cat ? cat.label : r.category;
+        const vDate   = getVerifiedDate(r);
+        const days    = daysSince(vDate);
+        const phoneHtml = r.phone
+          ? `<span>📞 <a href="tel:${r.phone.replace(/\D/g,'')}">${r.phone}</a></span>`
+          : '<span style="color:#bbb;">no phone listed</span>';
+        const hoursSnippet = r.hours
+          ? `<span>🕐 ${r.hours.split('·')[0].replace(/\s+/g,' ').trim()}</span>`
+          : '';
+
+        return `
+          <div class="verify-row" id="row-${r.id}">
+            <div class="verify-main">
+              <div class="verify-name">
+                <a href="resource.html?id=${r.id}" target="_blank" rel="noopener" style="color:var(--green-dark);text-decoration:none;">${r.name}</a>
+              </div>
+              <div class="verify-meta">
+                <span class="verify-cat">${catLbl}</span>
+                ${phoneHtml}
+                ${hoursSnippet}
+                ${r.address ? `<span>📍 ${r.address.split(',')[0]}</span>` : ''}
+              </div>
+            </div>
+            <div class="verify-status">
+              <span style="color:${daysColor(days)};font-weight:700;font-size:0.9rem;">${days}d ago</span>
+              <span style="font-size:0.72rem;color:#888;">${fmtDate(vDate)}</span>
+              <button class="verify-done-btn" id="btn-${r.id}" onclick="markVerified('${r.id}')">✓ Verified</button>
+            </div>
+          </div>`;
+      }).join('');
+    }
+
+    document.getElementById('verify-content').innerHTML = `
+      <div class="verify-stats">
+        <div class="stat-card overdue">
+          <div class="stat-num">${overdue.length}</div>
+          <div class="stat-label">Need Verification<br>(older than 30 days)</div>
+        </div>
+        <div class="stat-card ok">
+          <div class="stat-num">${ok.length}</div>
+          <div class="stat-label">Recently Verified<br>(within 30 days)</div>
+        </div>
+        <div class="stat-card total">
+          <div class="stat-num">${RESOURCES.length}</div>
+          <div class="stat-label">Total Listings</div>
+        </div>
+      </div>
+
+      <div class="verify-tip">
+        <strong>How to verify:</strong> Call each listing. Confirm they are still operating, hours are accurate, and services match the description. Ask if anything has changed. Then click <strong>✓ Verified</strong> and paste the generated code into <code>VERIFIED_DATES</code> in <code>js/data.js</code>.
+      </div>
+
+      ${overdue.length ? `<h2 class="verify-section-title">⚠️ Needs Verification — ${overdue.length} listing${overdue.length !== 1 ? 's' : ''}</h2>
+      <div class="verify-list">${renderRows(overdue)}</div>` : ''}
+
+      <h2 class="verify-section-title">✅ Recently Verified — ${ok.length} listing${ok.length !== 1 ? 's' : ''}</h2>
+      <div class="verify-list">${renderRows(ok)}</div>
+
+      <div class="verify-copy-block">
+        <h2>Copy to data.js → VERIFIED_DATES</h2>
+        <p>Click "✓ Verified" on any listing above. The code to paste into <code>VERIFIED_DATES</code> will appear here. Select all, copy, then add to data.js and redeploy.</p>
+        <code id="copy-output" class="copy-block">Click "✓ Verified" on listings above to generate entries.</code>
+        <button class="copy-btn" onclick="copyOutput()">📋 Copy to Clipboard</button>
+      </div>
+    `;
+
+    window.markVerified = function (id) {
+      const todayStr = new Date().toISOString().split('T')[0];
+      const btn  = document.getElementById('btn-' + id);
+      const row  = document.getElementById('row-' + id);
+      const out  = document.getElementById('copy-output');
+
+      if (!markedEntries.includes(id)) {
+        markedEntries.push(id);
+      }
+
+      // Rebuild output block
+      const initial = "Click \"✓ Verified\" on listings above to generate entries.";
+      const lines = markedEntries.map(mid => `  '${mid}': '${todayStr}',`).join('\n');
+      out.textContent = lines;
+
+      btn.textContent  = '✓ Done!';
+      btn.style.background = '#1B6B45';
+      btn.style.color  = '#fff';
+      btn.style.borderColor = '#1B6B45';
+      btn.disabled     = true;
+      row.style.opacity = '0.5';
+    };
+
+    window.copyOutput = function () {
+      const text = document.getElementById('copy-output').textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.textContent = '✅ Copied!';
+        setTimeout(() => btn.textContent = '📋 Copy to Clipboard', 2000);
+      }).catch(() => {
+        alert('Select all the text in the box and copy it manually (Ctrl+A, Ctrl+C).');
+      });
+    };
+  })();
+  </script>
+</body>
+</html>

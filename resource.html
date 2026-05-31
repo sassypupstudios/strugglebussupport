@@ -6,6 +6,11 @@
   <title id="page-title">Resource – Struggle Bus Support</title>
   <meta name="description" id="page-desc" content="Resource details – Struggle Bus Support Spartanburg, SC">
   <meta name="theme-color" content="#1B6B45">
+  <meta property="og:title" content="Struggle Bus Support – Spartanburg, SC Resources">
+  <meta property="og:description" content="Free and low-cost resources in Spartanburg, SC.">
+  <meta property="og:image" content="https://strugglebussupport.org/og-image.svg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -104,6 +109,19 @@
           </div>`;
       }
 
+      function formatVerified(dateStr) {
+        if (!dateStr) return null;
+        try {
+          const [y, m] = dateStr.split('-');
+          const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+          return months[parseInt(m, 10) - 1] + ' ' + y;
+        } catch (e) { return null; }
+      }
+
+      const vRaw = (typeof VERIFIED_DATES !== 'undefined' && VERIFIED_DATES[resource.id])
+                || (typeof DEFAULT_VERIFIED !== 'undefined' ? DEFAULT_VERIFIED : null);
+      const vStr = formatVerified(vRaw) || 'Unknown';
+
       const phoneLink = resource.phone
         ? `<a href="tel:${resource.phone.replace(/\D/g,'')}">${resource.phone}</a>` : null;
 
@@ -123,6 +141,7 @@
         ? `<a class="btn-lg outline" href="${resource.mapsUrl}" target="_blank" rel="noopener noreferrer" aria-label="Get directions to ${resource.name}">📍 Get Directions</a>` : '';
       const webBtn = resource.website
         ? `<a class="btn-lg green" href="${resource.website}" target="_blank" rel="noopener noreferrer" aria-label="Visit ${resource.name} website">Visit Website ↗</a>` : '';
+      const printBtn = `<button class="btn-lg outline btn-print" onclick="window.print()" type="button" aria-label="Print this resource or save as PDF">🖨️ Print / Save as PDF</button>`;
 
       detail.innerHTML = `
         <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -142,6 +161,7 @@
           ${callBtn}
           ${mapsBtn}
           ${webBtn}
+          ${printBtn}
         </div>
 
         <div class="info-grid" aria-label="Resource details">
@@ -149,6 +169,7 @@
           ${row('📞 Phone', phoneLink)}
           ${row('🕐 Hours', resource.hours)}
           ${row('✅ Eligibility', resource.eligibility)}
+          ${row('✓ Verified', vStr)}
         </div>
 
         <section class="detail-section" aria-labelledby="about-heading">
@@ -160,7 +181,7 @@
           <div class="ad-placeholder">Advertisement</div>
         </div>
 
-        <section class="detail-section" aria-labelledby="issue-heading">
+        <section class="detail-section no-print" aria-labelledby="issue-heading">
           <h2 id="issue-heading">Is This Information Outdated?</h2>
           <p>Resource details change. If hours, eligibility, or contact info is wrong, please
             <a href="suggest.html?flag=${resource.id}">let us know</a> so we can update it.</p>

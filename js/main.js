@@ -100,6 +100,15 @@
     return cat ? cat.label : id;
   }
 
+  function formatVerified(dateStr) {
+    if (!dateStr) return null;
+    try {
+      const [y, m] = dateStr.split('-');
+      const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      return months[parseInt(m, 10) - 1] + ' ' + y;
+    } catch (e) { return null; }
+  }
+
   function updateGrid() {
     document.querySelectorAll('.category-card').forEach(card => {
       card.classList.toggle('active', card.dataset.cat === activeCategory);
@@ -162,6 +171,11 @@
     const hoursLine = r.hours
       ? `<span>🕐 ${r.hours}</span>` : '';
 
+    const vRaw = (typeof VERIFIED_DATES !== 'undefined' && VERIFIED_DATES[r.id])
+              || (typeof DEFAULT_VERIFIED !== 'undefined' ? DEFAULT_VERIFIED : null);
+    const vStr = formatVerified(vRaw);
+    const verifiedLine = vStr ? `<span class="verified-meta">✓ Verified ${vStr}</span>` : '';
+
     return `
       <article class="resource-card">
         <div class="card-top">
@@ -171,6 +185,7 @@
         <div class="card-meta">
           ${addressLine}
           ${hoursLine}
+          ${verifiedLine}
         </div>
         <p class="card-desc">${r.description}</p>
         <div class="card-actions">

@@ -734,6 +734,152 @@ textarea.form-control { min-height: 100px; resize: vertical; }
 .text-muted { color: var(--muted); }
 .mt-0 { margin-top: 0; }
 
+/* ── Verified badge (on cards and detail) ────────────────────────────────── */
+.verified-meta {
+  font-size: 0.75rem;
+  color: #6a8a78;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ── Print button ────────────────────────────────────────────────────────── */
+.btn-print {
+  font-size: 0.9rem !important;
+  padding: 10px 18px !important;
+}
+
+/* ── Print stylesheet ────────────────────────────────────────────────────── */
+@media print {
+  @page { margin: 0.55in 0.5in; size: letter portrait; }
+
+  /* Hide everything that isn't useful on paper */
+  .skip-nav,
+  .emergency-bar,
+  .site-header,
+  .breadcrumb,
+  .action-row,
+  .btn-print,
+  .ad-zone,
+  .no-print,
+  .back-link,
+  .site-footer { display: none !important; }
+
+  html, body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 11pt;
+    line-height: 1.45;
+    font-family: Georgia, 'Times New Roman', serif;
+  }
+
+  a { color: #000 !important; text-decoration: none !important; }
+  a[href^="tel"]::after  { content: " (" attr(href) ")"; font-size: 9pt; color: #444; }
+  a[href^="tel"]::after  { content: ""; } /* phone numbers already shown */
+
+  .resource-detail {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .detail-header {
+    border-bottom: 2px solid #000;
+    padding-bottom: 8pt;
+    margin-bottom: 12pt !important;
+  }
+
+  .detail-header h1 {
+    font-size: 18pt !important;
+    color: #000 !important;
+    margin: 4pt 0 4pt !important;
+    line-height: 1.2;
+  }
+
+  .category-badge {
+    background: none !important;
+    border: 1px solid #000 !important;
+    color: #000 !important;
+    font-size: 8pt !important;
+    padding: 1px 5px !important;
+    border-radius: 3px;
+    display: inline;
+  }
+
+  .info-grid {
+    border: 1px solid #000 !important;
+    border-radius: 0 !important;
+    background: none !important;
+    margin-bottom: 12pt !important;
+  }
+
+  .info-row {
+    background: none !important;
+    border-bottom: 1px solid #ccc !important;
+    display: grid !important;
+    grid-template-columns: 90pt 1fr !important;
+    page-break-inside: avoid;
+  }
+  .info-row:last-child { border-bottom: none !important; }
+
+  .info-label {
+    background: #ececec !important;
+    color: #000 !important;
+    font-size: 7.5pt !important;
+    padding: 7pt 8pt !important;
+    font-weight: 700;
+    border-right: 1px solid #ccc;
+    text-transform: none;
+    letter-spacing: 0;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .info-value {
+    color: #000 !important;
+    font-size: 10pt !important;
+    padding: 7pt 10pt !important;
+    line-height: 1.4;
+    align-items: flex-start;
+  }
+
+  .detail-section {
+    margin-bottom: 12pt !important;
+    page-break-inside: avoid;
+  }
+
+  .detail-section h2 {
+    font-size: 9pt !important;
+    color: #000 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-bottom: 1pt solid #000 !important;
+    margin-bottom: 5pt !important;
+    padding-bottom: 3pt;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .detail-section p {
+    font-size: 10pt !important;
+    color: #000 !important;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* Print-only footer attribution */
+  .resource-detail::after {
+    content: "Struggle Bus Support  ·  strugglebussupport.org  ·  Listings may not be current — always call ahead to confirm";
+    display: block;
+    margin-top: 18pt;
+    font-size: 7.5pt;
+    color: #555;
+    text-align: center;
+    border-top: 1pt solid #ccc;
+    padding-top: 6pt;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}
+
 /* ── Responsive ──────────────────────────────────────────────────────────── */
 @media (max-width: 540px) {
   .search-row { flex-direction: column; }
