@@ -1,0 +1,21 @@
+{
+  "name": "Struggle Bus Support",
+  "short_name": "Struggle Bus",
+  "description": "Free resource directory for Spartanburg, SC — food, housing, healthcare, and more",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1B6B45",
+  "theme_color": "#1B6B45",
+  "orientation": "portrait-primary",
+  "lang": "en-US",
+  "scope": "/",
+  "categories": ["health", "social"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any"
+    }
+  ]
+}

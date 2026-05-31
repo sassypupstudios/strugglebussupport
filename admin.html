@@ -120,42 +120,41 @@
     .verify-done-btn:hover:not(:disabled) { background: var(--green-light); border-color: var(--green); color: var(--green); }
     .verify-done-btn:disabled { cursor: default; }
 
-    .verify-copy-block {
+    .submit-verified-btn {
       margin-top: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
       background: #1A2A22;
-      color: #ccc;
       border-radius: var(--radius-lg);
-      padding: 20px 20px;
+      padding: 20px 22px;
     }
-    .verify-copy-block h2 { color: #90c9a8; font-size: 0.95rem; margin-bottom: 6px; }
-    .verify-copy-block p  { font-size: 0.82rem; color: #aaa; margin-bottom: 12px; }
-    .verify-copy-block code { font-size: 0.82rem; }
-    .copy-block {
-      display: block;
-      background: #0f1f17;
-      color: #a8e6c2;
-      padding: 14px 16px;
-      border-radius: var(--radius);
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 0.82rem;
-      line-height: 1.6;
-      white-space: pre;
-      overflow-x: auto;
-      min-height: 44px;
-      cursor: text;
-      user-select: all;
-    }
-    .copy-btn {
-      margin-top: 10px;
+    .submit-verified-btn h2 { color: #90c9a8; font-size: 0.95rem; margin: 0; }
+    .submit-verified-btn p  { font-size: 0.82rem; color: #aaa; margin: 4px 0 0; }
+    .submit-btn {
       background: var(--green);
       color: #fff;
       border-radius: var(--radius);
-      padding: 8px 16px;
-      font-size: 0.85rem;
+      padding: 10px 22px;
+      font-size: 0.9rem;
       font-weight: 700;
       cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
-    .copy-btn:hover { background: #145336; }
+    .submit-btn:hover:not(:disabled) { background: #145336; }
+    .submit-btn:disabled { background: #555; cursor: default; }
+    .submit-status {
+      margin-top: 10px;
+      font-size: 0.85rem;
+      padding: 10px 14px;
+      border-radius: var(--radius);
+      display: none;
+    }
+    .submit-status.success { background: var(--green-light); color: var(--green-dark); display: block; }
+    .submit-status.error   { background: #fde8e8; color: #C62828; display: block; }
 
     .print-list-btn {
       display: inline-flex;
@@ -313,7 +312,7 @@
       </div>
 
       <div class="verify-tip">
-        <strong>How to verify:</strong> Call each listing. Confirm they are still operating, hours are accurate, and services match the description. Ask if anything has changed. Then click <strong>✓ Verified</strong> and paste the generated code into <code>VERIFIED_DATES</code> in <code>js/data.js</code>.
+        <strong>How to verify:</strong> Call each listing. Confirm they are still operating, hours are accurate, and services match the description. Ask if anything has changed. Then click <strong>✓ Verified</strong> on each one, then hit <strong>Submit All Verified</strong> at the bottom. That's it — you're done!
       </div>
 
       ${overdue.length ? `<h2 class="verify-section-title">⚠️ Needs Verification — ${overdue.length} listing${overdue.length !== 1 ? 's' : ''}</h2>
@@ -322,46 +321,72 @@
       <h2 class="verify-section-title">✅ Recently Verified — ${ok.length} listing${ok.length !== 1 ? 's' : ''}</h2>
       <div class="verify-list">${renderRows(ok)}</div>
 
-      <div class="verify-copy-block">
-        <h2>Copy to data.js → VERIFIED_DATES</h2>
-        <p>Click "✓ Verified" on any listing above. The code to paste into <code>VERIFIED_DATES</code> will appear here. Select all, copy, then add to data.js and redeploy.</p>
-        <code id="copy-output" class="copy-block">Click "✓ Verified" on listings above to generate entries.</code>
-        <button class="copy-btn" onclick="copyOutput()">📋 Copy to Clipboard</button>
+      <div class="submit-verified-btn">
+        <div>
+          <h2>Submit All Verified</h2>
+          <p id="submit-count-label">Mark listings above then click to save your work.</p>
+        </div>
+        <button class="submit-btn" id="submit-verified-btn" onclick="submitVerified()">✅ Submit All Verified</button>
       </div>
+      <div class="submit-status" id="submit-status"></div>
     `;
 
     window.markVerified = function (id) {
-      const todayStr = new Date().toISOString().split('T')[0];
-      const btn  = document.getElementById('btn-' + id);
-      const row  = document.getElementById('row-' + id);
-      const out  = document.getElementById('copy-output');
+      const btn = document.getElementById('btn-' + id);
+      const row = document.getElementById('row-' + id);
 
       if (!markedEntries.includes(id)) {
         markedEntries.push(id);
       }
 
-      // Rebuild output block
-      const initial = "Click \"✓ Verified\" on listings above to generate entries.";
-      const lines = markedEntries.map(mid => `  '${mid}': '${todayStr}',`).join('\n');
-      out.textContent = lines;
-
-      btn.textContent  = '✓ Done!';
+      btn.textContent = '✓ Done!';
       btn.style.background = '#1B6B45';
-      btn.style.color  = '#fff';
+      btn.style.color = '#fff';
       btn.style.borderColor = '#1B6B45';
-      btn.disabled     = true;
+      btn.disabled = true;
       row.style.opacity = '0.5';
+
+      const label = document.getElementById('submit-count-label');
+      if (label) {
+        label.textContent = markedEntries.length + ' listing' + (markedEntries.length !== 1 ? 's' : '') + ' marked — click to save.';
+      }
     };
 
-    window.copyOutput = function () {
-      const text = document.getElementById('copy-output').textContent;
-      navigator.clipboard.writeText(text).then(() => {
-        const btn = document.querySelector('.copy-btn');
-        btn.textContent = '✅ Copied!';
-        setTimeout(() => btn.textContent = '📋 Copy to Clipboard', 2000);
-      }).catch(() => {
-        alert('Select all the text in the box and copy it manually (Ctrl+A, Ctrl+C).');
-      });
+    window.submitVerified = async function () {
+      if (markedEntries.length === 0) {
+        const s = document.getElementById('submit-status');
+        s.className = 'submit-status error';
+        s.textContent = 'No listings marked yet. Click "✓ Verified" on listings before submitting.';
+        return;
+      }
+
+      const btn    = document.getElementById('submit-verified-btn');
+      const status = document.getElementById('submit-status');
+
+      btn.disabled = true;
+      btn.textContent = 'Submitting…';
+      status.className = 'submit-status';
+      status.style.display = 'none';
+
+      try {
+        const res = await fetch('/api/mark-verified', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ verifiedIds: markedEntries }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (res.ok) {
+          status.className = 'submit-status success';
+          status.textContent = '✅ ' + (data.message || 'Saved! The owner will receive a code update email.');
+        } else {
+          throw new Error(data.error || 'Server error (' + res.status + ')');
+        }
+      } catch (err) {
+        status.className = 'submit-status error';
+        status.textContent = '❌ ' + err.message;
+        btn.disabled = false;
+        btn.textContent = '✅ Submit All Verified';
+      }
     };
   })();
   </script>

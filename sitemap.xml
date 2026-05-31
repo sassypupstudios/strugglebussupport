@@ -6,8 +6,17 @@
   <url><loc>https://strugglebussupport.org/about.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://strugglebussupport.org/suggest.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://strugglebussupport.org/meetings.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://strugglebussupport.org/contact.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://strugglebussupport.org/contact.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://strugglebussupport.org/accessibility.html</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+
+  <!-- Guides -->
+  <url><loc>https://strugglebussupport.org/guides.html</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://strugglebussupport.org/guides/snap-benefits.html</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://strugglebussupport.org/guides/emergency-shelter.html</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://strugglebussupport.org/guides/healthcare-uninsured.html</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://strugglebussupport.org/guides/utility-assistance.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/guides/reentry.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://strugglebussupport.org/guides/mental-health-care.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Category pages -->
   <url><loc>https://strugglebussupport.org/category.html?cat=food</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>

@@ -2,76 +2,66 @@ name: Weekly Listing Verification Reminder
 
 on:
   schedule:
-    # Every Monday at 9:00 AM Eastern (13:00 UTC)
-    - cron: '0 13 * * 1'
+    # Every Monday at 2:00 AM Eastern (7:00 UTC during EDT, 8:00 UTC during EST)
+    - cron: '0 7 * * 1'
   workflow_dispatch:   # Also allows manual trigger from GitHub Actions tab
 
 jobs:
-  create-reminder:
+  send-reminder:
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
 
     steps:
-      - name: Create verification reminder issue
-        uses: actions/github-script@v7
+      - name: Build reminder email body
+        id: build
+        run: |
+          DATE=$(TZ="America/New_York" date "+%A, %B %-d, %Y")
+          echo "date=$DATE" >> $GITHUB_OUTPUT
+          cat <<'BODY' > email_body.txt
+          Hi Kiran! Time for the weekly listing check. 🚌
+
+          Here's what to do:
+
+          1. Open the Verification Dashboard:
+             https://strugglebussupport.org/admin.html
+
+          2. Listings are sorted oldest-verified first — start from the top.
+
+          3. For each resource, call the phone number and confirm:
+             - Still operating?
+             - Hours still accurate?
+             - Services still match the description?
+             - Address / contact info changed?
+
+          4. If anything changed, use the Suggest a Correction form:
+             https://strugglebussupport.org/suggest.html
+
+          5. Click "✓ Verified" on each listing you confirm.
+
+          6. When done, click the green "Submit All Verified" button at the bottom.
+             That's it! The code update will be emailed to the owner automatically.
+
+          Priority categories (change most often):
+          - Food pantries — hours and distribution days change frequently
+          - Utilities/financial assistance — many programs are seasonal
+          - Healthcare clinics — sliding scale rules and hours update
+          - Substance recovery — program availability can shift
+
+          Quick links:
+          - Dashboard: https://strugglebussupport.org/admin.html
+          - Suggest Form: https://strugglebussupport.org/suggest.html
+
+          This reminder is sent automatically every Monday at 2 AM.
+          BODY
+
+      - name: Send verification reminder email
+        uses: dawidd6/action-send-mail@v3
         with:
-          script: |
-            // Ensure the labels exist (creates them if missing)
-            const labelDefs = [
-              { name: 'verification', color: '0075ca', description: 'Weekly listing verification task' },
-              { name: 'weekly-task',  color: 'e4e669', description: 'Recurring weekly action item' }
-            ];
-            for (const lbl of labelDefs) {
-              try {
-                await github.rest.issues.createLabel({ owner: context.repo.owner, repo: context.repo.repo, ...lbl });
-              } catch (e) { /* label already exists — that's fine */ }
-            }
-
-            const now = new Date();
-            const dateStr = now.toLocaleDateString('en-US', {
-              weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
-              timeZone: 'America/New_York'
-            });
-
-            const body = `## Weekly Listing Verification — ${dateStr}
-
-Hi! Time for the weekly listing check. 🚌
-
-### Steps
-
-1. Open the **[Verification Dashboard](https://strugglebussupport.org/admin.html)**
-2. Work down from the top — listings are sorted oldest-verified first
-3. For each resource: **call the phone number** and confirm:
-   - Still operating?
-   - Hours still accurate?
-   - Services still match the description?
-   - Address / contact info changed?
-4. If anything changed → use the [Suggest a Correction](https://strugglebussupport.org/suggest.html) form
-5. After verifying → click **"✓ Verified"** in the dashboard to generate the code entry
-6. Copy the generated code into \`VERIFIED_DATES\` in [\`js/data.js\`](https://github.com/${context.repo.owner}/${context.repo.repo}/blob/main/js/data.js) and save/push
-7. Close this issue when done ✅
-
-### Priority Categories (change most often)
-- 🍽️ **Food pantries** — hours and distribution days change frequently
-- 💡 **Utilities/financial assistance** — many programs are seasonal
-- ⚕️ **Healthcare clinics** — sliding scale rules and hours update
-- 💊 **Substance recovery** — program availability can shift
-
-### Quick Links
-| | |
-|--|--|
-| 🔍 [Verification Dashboard](https://strugglebussupport.org/admin.html) | See which listings need calls |
-| 📝 [Edit data.js on GitHub](https://github.com/${context.repo.owner}/${context.repo.repo}/blob/main/js/data.js) | Update VERIFIED_DATES |
-| 💬 [Suggest Form](https://strugglebussupport.org/suggest.html) | Report a changed listing |
-
----
-*This issue is created automatically every Monday by GitHub Actions. You can trigger it manually anytime from the [Actions tab](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/workflows/verify-reminder.yml).*`;
-
-            await github.rest.issues.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title: `Weekly Listing Verification — ${dateStr}`,
-              body: body,
-              labels: ['verification', 'weekly-task']
-            });
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: "📋 Weekly Listing Verification — ${{ steps.build.outputs.date }}"
+          to: ${{ secrets.KIRAN_EMAIL }}
+          from: "Struggle Bus Support <${{ secrets.MAIL_USERNAME }}>"
+          body: file://email_body.txt

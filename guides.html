@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resource Guides – Struggle Bus Support</title>
+  <meta name="description" content="Step-by-step guides to navigating food assistance, emergency shelter, healthcare, and other resources in Spartanburg, SC.">
+  <meta property="og:title" content="Resource Guides – Struggle Bus Support">
+  <meta property="og:description" content="Step-by-step guides to navigating food assistance, emergency shelter, healthcare, and other resources in Spartanburg, SC.">
+  <meta property="og:image" content="https://strugglebussupport.org/og-image.svg">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#1B6B45">
+  <link rel="canonical" href="https://strugglebussupport.org/guides.html">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .guides-hero {
+      background: linear-gradient(135deg, #1B6B45 0%, #145336 100%);
+      color: #fff;
+      padding: 44px 20px 36px;
+      text-align: center;
+    }
+    .guides-hero h1 { color: #fff; font-size: clamp(1.6rem,5vw,2.4rem); margin-bottom: 10px; }
+    .guides-hero p  { color: rgba(255,255,255,0.87); font-size: 1.05rem; max-width: 560px; margin: 0 auto; }
+
+    .guides-grid {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 36px 16px 56px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .guide-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.15s, transform 0.1s;
+    }
+    .guide-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+    .guide-icon { font-size: 2rem; }
+    .guide-card h2 { font-size: 1.08rem; margin: 0; color: var(--text); line-height: 1.3; }
+    .guide-card p  { font-size: 0.88rem; color: var(--muted); margin: 0; line-height: 1.55; flex: 1; }
+    .guide-card a.btn-guide {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--green);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 10px 16px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      margin-top: 4px;
+      transition: background 0.15s;
+      align-self: flex-start;
+    }
+    .guide-card a.btn-guide:hover { background: var(--green-dark); color: #fff; }
+    .guide-tag {
+      display: inline-block;
+      background: var(--green-light);
+      color: var(--green-dark);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 2px 8px;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-nav" href="#main-content">Skip to content</a>
+
+  <div class="emergency-bar">
+    Emergency? Call <strong>911</strong> &nbsp;·&nbsp; Mental health crisis: <strong>988</strong> &nbsp;·&nbsp; Domestic violence: <a href="tel:18007997233">1-800-799-7233</a>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo" aria-label="Struggle Bus Support – Home">
+        <div class="logo-icon" aria-hidden="true">🚌</div>
+        <span class="logo-text">
+          Struggle Bus Support
+          <span class="logo-sub">Spartanburg, SC Resources</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/">Find Help</a>
+        <a href="guides.html" class="active" aria-current="page">Guides</a>
+        <a href="suggest.html">Suggest</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content" id="main-content">
+    <div class="guides-hero">
+      <h1>How-To Guides</h1>
+      <p>Step-by-step help navigating the most common resource systems in Spartanburg, SC.</p>
+    </div>
+
+    <div class="guides-grid">
+
+      <article class="guide-card">
+        <div class="guide-icon" aria-hidden="true">🍽️</div>
+        <span class="guide-tag">Food</span>
+        <h2>How to Get SNAP Food Benefits in SC</h2>
+        <p>Who qualifies, what documents to bring, how to apply online or in person, and what happens after you apply.</p>
+        <a href="guides/snap-benefits.html" class="btn-guide">Read Guide →</a>
+      </article>
+
+      <article class="guide-card">
+        <div class="guide-icon" aria-hidden="true">🛖</div>
+        <span class="guide-tag">Shelter</span>
+        <h2>Finding Emergency Shelter in Spartanburg</h2>
+        <p>What to do tonight if you need shelter — who to call first, which shelters serve which populations, and what to expect.</p>
+        <a href="guides/emergency-shelter.html" class="btn-guide">Read Guide →</a>
+      </article>
+
+      <article class="guide-card">
+        <div class="guide-icon" aria-hidden="true">⚕️</div>
+        <span class="guide-tag">Healthcare</span>
+        <h2>Getting Healthcare Without Insurance in Spartanburg</h2>
+        <p>Your options for free or low-cost care — FQHCs, free clinics, sliding scale fees, and how to get prescription help.</p>
+        <a href="guides/healthcare-uninsured.html" class="btn-guide">Read Guide →</a>
+      </article>
+
+      <article class="guide-card">
+        <div class="guide-icon" aria-hidden="true">💡</div>
+        <span class="guide-tag">Utilities</span>
+        <h2>Help Paying Electric &amp; Gas Bills in SC</h2>
+        <p>LIHEAP, utility assistance programs, how to apply, what deadlines to watch, and what to do if your service was shut off.</p>
+        <a href="guides/utility-assistance.html" class="btn-guide">Read Guide →</a>
+      </article>
+
+      <article class="guide-card">
+        <div class="guide-icon" aria-hidden="true">🔑</div>
+        <span class="guide-tag">Reentry</span>
+        <h2>Reentry in Spartanburg: Resources After Incarceration</h2>
+        <p>Housing, jobs, ID documents, expungement, and which Spartanburg organizations specifically serve returning citizens.</p>
+        <a href="guides/reentry.html" class="btn-guide">Read Guide →</a>
+      </article>
+
+      <article class="guide-card">
+        <div class="guide-icon" aria-hidden="true">🧠</div>
+        <span class="guide-tag">Mental Health</span>
+        <h2>Free &amp; Low-Cost Mental Health Care in Spartanburg</h2>
+        <p>How to access therapy, psychiatric care, and crisis support when you can't afford it — or don't have insurance.</p>
+        <a href="guides/mental-health-care.html" class="btn-guide">Read Guide →</a>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="/">Find Help</a>
+      <a href="guides.html">Guides</a>
+      <a href="suggest.html">Suggest a Resource</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+    </nav>
+    <p>Serving Spartanburg County, SC &nbsp;·&nbsp; Always free to use</p>
+    <p>Listings may not be current. Always call ahead.</p>
+    <p style="margin-top:12px;font-size:0.75rem;color:#888;">© 2026 Struggle Bus Support. Not affiliated with any government agency.</p>
+  </footer>
+
+  <script src="js/translate.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
