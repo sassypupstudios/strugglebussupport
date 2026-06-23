@@ -187,7 +187,7 @@ const RESOURCES = [
     hours: 'Call for current pantry schedule',
     eligibility: 'Open to those in need. Described by visitors as welcoming and compassionate.',
     description: 'Food pantry operated through St. Matthew\'s Episcopal Church. Community members describe a warm, judgment-free environment. Call the church office for current pantry days and hours.',
-    website: null,
+    website: 'https://www.stmatthewsepiscopal.org',
     mapsUrl: 'https://maps.google.com/?q=101+St+Matthews+Ln+Spartanburg+SC+29301',
   },
   {
@@ -277,9 +277,22 @@ const RESOURCES = [
     phone: '(864) 542-2273',
     hours: 'By appointment only — call to schedule. New patient applications: Mon 10am–1pm & Thu 1–4pm.',
     eligibility: 'Uninsured adults who cannot afford care. Appointment required — walk-ins not accepted.',
-    description: 'Volunteer-run free medical clinic providing primary care, chronic disease management, and prescription assistance to uninsured adults. Call to confirm current clinic schedule before visiting. Satellite clinic at 101 St Matthews Ln (call for hours).',
+    description: 'Volunteer-run free medical clinic providing primary care, chronic disease management, and prescription assistance to uninsured adults. Call to confirm current clinic schedule before visiting. Also operates a walk-in satellite clinic at St. Matthew\'s Episcopal Church (Wednesdays 9:30–11:00 AM, no appointment needed).',
     website: 'https://www.slfmc.org',
     mapsUrl: 'https://maps.google.com/?q=162+N+Dean+St+Spartanburg+SC+29302',
+  },
+  {
+    id: 'st-matthews-free-medical-clinic',
+    name: "St. Matthew's Free Medical Clinic",
+    category: 'healthcare',
+    address: '101 St Matthews Ln, Spartanburg, SC 29301',
+    zip: '29301',
+    phone: '(864) 576-0424',
+    hours: 'Wednesdays 9:30–11:00 AM · No appointment necessary',
+    eligibility: 'Uninsured adults. Walk-ins welcome — no appointment needed.',
+    description: "Free walk-in medical clinic at St. Matthew's Episcopal Church, operating as a satellite of St. Luke's Free Medical Clinic in partnership with VCOM. No appointment necessary. Bilingual signage available (English, Spanish, Ukrainian). 101 St Matthews Ln, Spartanburg.",
+    website: 'https://www.stmatthewsepiscopal.org',
+    mapsUrl: 'https://maps.google.com/?q=101+St+Matthews+Ln+Spartanburg+SC+29301',
   },
 
   // ── HOUSING ───────────────────────────────────────────────────────────────
