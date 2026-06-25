@@ -1,7 +1,7 @@
 {
   "name": "Struggle Bus Support",
   "short_name": "Struggle Bus",
-  "description": "Free resource directory for Spartanburg & Union Counties, SC — food, housing, healthcare, and more",
+  "description": "Free resource directory for Upstate SC — food, housing, healthcare, and more",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#1B6B45",

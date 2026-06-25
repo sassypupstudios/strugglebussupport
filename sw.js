@@ -4,7 +4,7 @@
  * Enables offline browsing of previously visited pages.
  */
 
-var CACHE = 'sbs-v2';
+var CACHE = 'sbs-v3';
 var STATIC = [
   '/',
   '/index.html',
@@ -15,6 +15,8 @@ var STATIC = [
   '/css/style.css',
   '/js/data.js',
   '/js/petcare-resources.js',
+  '/js/union-resources.js',
+  '/js/greenville-resources.js',
   '/js/main.js',
   '/js/translate.js',
   '/js/app.js',
