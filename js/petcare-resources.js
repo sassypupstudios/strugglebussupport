@@ -78,7 +78,8 @@ if (Array.isArray(RESOURCES)) {
 
   for (const resource of petCareResources) {
     if (!existingResourceIds.has(resource.id)) {
-      RESOURCES.push(resource);
+      const county = resource.address && resource.address.includes('Greenville') ? 'greenville' : 'spartanburg';
+      RESOURCES.push(Object.assign({ county }, resource));
     }
   }
 }

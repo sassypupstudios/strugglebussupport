@@ -3,12 +3,14 @@
 
   const searchInput   = document.getElementById('search-input');
   const categoryFilter = document.getElementById('category-filter');
+  const countyFilter  = document.getElementById('county-filter');
   const categoryGrid  = document.getElementById('category-grid');
   const resourceList  = document.getElementById('resource-list');
   const resultsCount  = document.getElementById('results-count');
   const btnClear      = document.getElementById('btn-clear');
 
   let activeCategory = '';
+  let activeCounty   = '';
   let searchQuery    = '';
 
   // ── Populate category select ──────────────────────────────────────────────
@@ -73,11 +75,18 @@
     render();
   });
 
+  countyFilter.addEventListener('change', () => {
+    activeCounty = countyFilter.value;
+    render();
+  });
+
   btnClear.addEventListener('click', () => {
     searchInput.value = '';
     categoryFilter.value = '';
+    countyFilter.value = '';
     searchQuery    = '';
     activeCategory = '';
+    activeCounty   = '';
     updateGrid();
     render();
   });
@@ -92,6 +101,10 @@
     activeCategory = params.get('cat');
     categoryFilter.value = activeCategory;
     updateGrid();
+  }
+  if (params.get('county')) {
+    activeCounty = params.get('county');
+    countyFilter.value = activeCounty;
   }
 
   // ── Helpers ───────────────────────────────────────────────────────────────
@@ -122,19 +135,20 @@
 
   function matchesSearch(r, q) {
     if (!q) return true;
-    const haystack = [r.name, r.description, r.address, r.zip, r.eligibility]
+    const haystack = [r.name, r.description, r.address, r.zip, r.eligibility, r.county]
       .filter(Boolean).join(' ').toLowerCase();
     return q.split(/\s+/).every(word => haystack.includes(word));
   }
 
   function render() {
     const filtered = RESOURCES.filter(r => {
-      const catOk = !activeCategory || r.category === activeCategory;
-      const qOk   = matchesSearch(r, searchQuery);
-      return catOk && qOk;
+      const catOk    = !activeCategory || r.category === activeCategory;
+      const countyOk = !activeCounty   || r.county   === activeCounty;
+      const qOk      = matchesSearch(r, searchQuery);
+      return catOk && countyOk && qOk;
     });
 
-    const hasFilter = searchQuery || activeCategory;
+    const hasFilter = searchQuery || activeCategory || activeCounty;
     btnClear.classList.toggle('hidden', !hasFilter);
 
     // No search/filter active — clear the list and hide count

@@ -61,12 +61,22 @@
       <p>Free and low-cost services for food, housing, healthcare, and more — no judgment.</p>
       <div class="search-box" role="search">
         <div class="search-row">
-          <label for="search-input" class="sr-only">Search by keyword or zip code</label>
-          <input type="search" id="search-input" class="search-input" placeholder="Search by keyword or zip code…" aria-label="Search by keyword or zip code" autocomplete="off">
+          <label for="search-input" class="sr-only">Search by keyword, city, or county</label>
+          <input type="search" id="search-input" class="search-input" placeholder="Search by keyword, city, or county…" aria-label="Search by keyword, city, or county" autocomplete="off">
           <button class="btn-search" id="search-btn" aria-label="Search">Search</button>
         </div>
-        <label for="category-filter" class="sr-only">Filter by category</label>
-        <select id="category-filter" class="category-select" aria-label="Filter by category"><option value="">All Categories</option></select>
+        <div class="filter-row">
+          <label for="category-filter" class="sr-only">Filter by category</label>
+          <select id="category-filter" class="category-select" aria-label="Filter by category"><option value="">All Categories</option></select>
+          <label for="county-filter" class="sr-only">Filter by county</label>
+          <select id="county-filter" class="category-select" aria-label="Filter by county">
+            <option value="">All Counties</option>
+            <option value="spartanburg">Spartanburg County</option>
+            <option value="union">Union County</option>
+            <option value="greenville">Greenville County</option>
+            <option value="cherokee">Cherokee County</option>
+          </select>
+        </div>
       </div>
     </section>
 

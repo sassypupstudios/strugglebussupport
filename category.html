@@ -55,7 +55,7 @@
     <section class="results-section" id="results" aria-labelledby="cat-heading">
       <div class="results-header">
         <p class="results-count" id="results-count" aria-live="polite"></p>
-        <div style="display:flex;gap:10px;align-items:center;">
+        <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
           <label for="cat-search" class="sr-only">Search within category</label>
           <input
             type="search"
@@ -65,6 +65,14 @@
             style="max-width:240px;min-height:40px;padding:10px 14px;font-size:0.9rem;"
             aria-label="Search within this category"
           >
+          <label for="cat-county-filter" class="sr-only">Filter by county</label>
+          <select id="cat-county-filter" class="category-select" aria-label="Filter by county" style="min-height:40px;">
+            <option value="">All Counties</option>
+            <option value="spartanburg">Spartanburg County</option>
+            <option value="union">Union County</option>
+            <option value="greenville">Greenville County</option>
+            <option value="cherokee">Cherokee County</option>
+          </select>
         </div>
       </div>
       <div class="resource-list" id="resource-list">
@@ -113,9 +121,10 @@
       const breadcrumb = document.getElementById('breadcrumb-cat');
       const pageTitle = document.getElementById('page-title');
       const pageDesc  = document.getElementById('page-desc');
-      const list      = document.getElementById('resource-list');
-      const countEl   = document.getElementById('results-count');
-      const catSearch = document.getElementById('cat-search');
+      const list        = document.getElementById('resource-list');
+      const countEl     = document.getElementById('results-count');
+      const catSearch   = document.getElementById('cat-search');
+      const catCounty   = document.getElementById('cat-county-filter');
 
       if (!cat) {
         heading.textContent = 'All Resources';
@@ -130,21 +139,31 @@
       }
 
       let query = '';
+      let activeCounty = params.get('county') || '';
+      if (activeCounty) catCounty.value = activeCounty;
+
       catSearch.addEventListener('input', () => {
         query = catSearch.value.trim().toLowerCase();
         render();
       });
 
+      catCounty.addEventListener('change', () => {
+        activeCounty = catCounty.value;
+        render();
+      });
+
       function matchesSearch(r, q) {
         if (!q) return true;
-        const hay = [r.name, r.description, r.address, r.eligibility]
+        const hay = [r.name, r.description, r.address, r.eligibility, r.county]
           .filter(Boolean).join(' ').toLowerCase();
         return q.split(/\s+/).every(w => hay.includes(w));
       }
 
       function render() {
         const filtered = RESOURCES.filter(r =>
-          (!catId || r.category === catId) && matchesSearch(r, query)
+          (!catId || r.category === catId) &&
+          (!activeCounty || r.county === activeCounty) &&
+          matchesSearch(r, query)
         );
 
         countEl.textContent = filtered.length === 1

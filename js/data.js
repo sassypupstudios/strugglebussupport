@@ -1259,3 +1259,6 @@ const RESOURCES = [
     mapsUrl: 'https://maps.google.com/?q=1066+W+Main+St+Spartanburg+SC+29301',
   },
 ];
+
+// Default county for Spartanburg-based resources (county-specific files set their own)
+RESOURCES.forEach(function (r) { if (!r.county) r.county = 'spartanburg'; });

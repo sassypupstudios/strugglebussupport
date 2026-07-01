@@ -665,7 +665,7 @@ if (Array.isArray(RESOURCES)) {
 
   for (const resource of greenvilleResources) {
     if (!existingResourceIds.has(resource.id)) {
-      RESOURCES.push(resource);
+      RESOURCES.push(Object.assign({ county: 'greenville' }, resource));
     }
   }
 }

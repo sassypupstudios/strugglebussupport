@@ -379,7 +379,7 @@ if (Array.isArray(RESOURCES)) {
 
   for (const resource of unionResources) {
     if (!existingResourceIds.has(resource.id)) {
-      RESOURCES.push(resource);
+      RESOURCES.push(Object.assign({ county: 'union' }, resource));
     }
   }
 }

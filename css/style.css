@@ -224,6 +224,18 @@ ul { list-style: none; }
   cursor: pointer;
 }
 .category-select:focus { outline: none; border-color: var(--orange); }
+.filter-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.filter-row .category-select {
+  flex: 1;
+  width: auto;
+}
+@media (max-width: 540px) {
+  .filter-row { flex-direction: column; }
+}
 
 /* ── Ad zone ─────────────────────────────────────────────────────────────── */
 .ad-zone {
